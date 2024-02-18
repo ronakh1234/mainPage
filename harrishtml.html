@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureSteps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5E1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #8B7B52; 
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .header h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px 10%;
+            flex: 1;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px; 
+        }
+
+        .button, .link-button {
+            background-color: #8B7B52;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover, .link-button:hover {
+            background-color: #6B5F3D; /* Darker shade of green on hover */
+        }
+
+        .footer {
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .link-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #007bff;
+            font-size: 16px;
+            text-decoration: underline;
+            padding: 0;
+            margin: 0;
+        }
+
+        .image-placeholder {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>SecureSteps</h1>
+        <h2>Unleashing Potential, Securing Futures</h2>
+    </div>
+
+    <div id="main-content" class="content">
+        <p>Welcome to SecureSteps, where we're dedicated to revolutionizing your financial management through innovative solutions that empower your financial future.</p>
+        
+        <div class="button-container">
+            <button class="button" onclick="navigateTo('billing')">Billing</button>
+            <button class="button" onclick="navigateTo('goals')">Goals</button>
+            <button class="button" onclick="navigateTo('analytics')">Analytics</button>
+            <button class="button" onclick="navigateTo('revenue')">Revenue</button>
+        </div>
+
+        <img src="https://i.ibb.co/hZX7xSp/Screenshot-2024-02-18-at-06-06-36.png" alt="Screenshot-2024-02-18-at-06-06-36" class="image-placeholder">
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SecureSteps. All rights reserved.</p>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            if (page === 'billing') {
+                window.location.href = "billing.html";
+            } else if (page === 'goals') {
+                window.location.href = "goals.html";
+            } else if (page === 'analytics') {
+                window.location.href = "analytics.html";
+            } else if (page === 'revenue') {
+                window.location.href = "revenue.html";
+            }
+        }
+    </script>
+</body>
+</html>

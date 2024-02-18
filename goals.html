@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureSteps - Enhanced Financial Planning</title>
+    <style>
+        /* Existing styles remain unchanged for consistency */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5E1; /* Solid cream background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #8B7B52; /* Solid leafy color */
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* ...other existing styles... */
+
+        /* Additional Styles for Financial Planning Features */
+        .financial-planning-container {
+            margin: 20px auto;
+            text-align: left;
+            width: 80%;
+        }
+
+        .input-label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #6B5F3D;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #8B7B52;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background-color: #8B7B52; /* Solid leafy color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .financial-plan-results {
+            margin-top: 30px;
+            background-color: #EFEFEF;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>SecureSteps</h1>
+        <h2>Unleashing Potential, Securing Futures</h2>
+    </div>
+
+    <div id="main-content" class="content">
+        <p>Welcome to SecureSteps, where we're dedicated to revolutionizing your financial management through innovative solutions that empower your financial future.</p>
+
+        <!-- Financial Planning Form -->
+        <div class="financial-planning-container">
+            <label for="savings-goal" class="input-label">Savings Goal ($):</label>
+            <input type="number" id="savings-goal" class="input-field">
+
+            <label for="monthly-income" class="input-label">Monthly Income ($):</label>
+            <input type="number" id="monthly-income" class="input-field">
+
+            <label for="monthly-expenses" class="input-label">Monthly Expenses ($):</label>
+            <input type="number" id="monthly-expenses" class="input-field">
+
+            <button class="submit-button" onclick="evaluateFinancialPlan()">Evaluate Financial Plan</button>
+
+            <div id="financial-plan-results" class="financial-plan-results">
+                <!-- JavaScript will populate this area with the evaluation results -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SecureSteps. All rights reserved.</p>
+    </div>
+
+    <script>
+        function evaluateFinancialPlan() {
+            const savingsGoal = document.getElementById('savings-goal').value;
+            const monthlyIncome = document.getElementById('monthly-income').value;
+            const monthlyExpenses = document.getElementById('monthly-expenses').value;
+
+            if (!savingsGoal || !monthlyIncome || !monthlyExpenses) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const netSavingsPerMonth = monthlyIncome - monthlyExpenses;
+            const monthsToGoal = savingsGoal / netSavingsPerMonth;
+            const resultsContainer = document.getElementById('financial-plan-results');
+
+            resultsContainer.innerHTML = `
+                <h3>Financial Plan Evaluation</h3>
+                <p>Your net savings per month: <strong>$${netSavingsPerMonth.toFixed(2)}</strong></p>
+                <p>Months to reach your savings goal: <strong>${monthsToGoal.toFixed(1)}</strong> months</p>
+            `;
+
+            // Additional detailed analysis and recommendations can be added here based on business concepts
+        }
+    </script>
+</body>
+</html>

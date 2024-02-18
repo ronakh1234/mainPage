@@ -1,0 +1,71 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF5E1; 
+}
+
+.header, .footer {
+    background-color: #8B7B52; 
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center; 
+}
+
+.analytics-section {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px; 
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left; 
+}
+
+.section-title {
+    color: #8B7B52; 
+    margin-bottom: 15px;
+}
+
+.graph, .data-table {
+    background-color: white;
+    border: 1px solid #ddd; 
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px; 
+}
+
+.data-table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left; 
+}
+
+.data-table th {
+    background-color: #8B7B52; 
+    color: white; 
+}
+
+.data-point {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%; 
+}
+
+.data-legend {
+    margin-top: 10px;
+}

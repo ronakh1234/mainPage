@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureSteps - Billing Cycle Calendar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5E1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #8B7B52;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        
+
+   
+        .date-picker-container {
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .date-picker {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #8B7B52;
+            font-size: 16px;
+        }
+
+        .calendar-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .month {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .month-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8B7B52;
+        }
+
+        .billing-day {
+            font-size: 16px;
+            color: #6B5F3D;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>SecureSteps</h1>
+        <h2>Unleashing Potential, Securing Futures</h2>
+    </div>
+
+    <div id="main-content" class="content">
+        <p>Welcome to SecureSteps, where we're dedicated to revolutionizing your financial management through innovative solutions that empower your financial future.</p>
+        
+
+        <div class="button-container">
+
+        </div>
+
+
+        <div class="date-picker-container">
+            <input type="date" id="billing-start-date" class="date-picker" onchange="generateCalendar()">
+        </div>
+
+        <div id="calendar-container" class="calendar-container">
+        
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SecureSteps. All rights reserved.</p>
+    </div>
+
+    <script>
+
+
+        function generateCalendar() {
+            const startDate = document.getElementById('billing-start-date').valueAsDate;
+            if (!startDate) {
+                alert('Please select a start date.');
+                return;
+            }
+
+            const calendarContainer = document.getElementById('calendar-container');
+            calendarContainer.innerHTML = ''; 
+
+
+            for (let i = 1; i <= 12; i++) {
+                const billingDate = new Date(startDate);
+                billingDate.setMonth(startDate.getMonth() + i);
+                
+
+                if (startDate.getDate() !== billingDate.getDate()) {
+                    billingDate.setDate(0); 
+                }
+
+                const monthDiv = document.createElement('div');
+                monthDiv.className = 'month';
+
+                const monthName = document.createElement('div');
+                monthName.className = 'month-name';
+                monthName.textContent = billingDate.toLocaleString('default', { month: 'long' });
+
+                const billingDay = document.createElement('div');
+                billingDay.className = 'billing-day';
+                billingDay.textContent = `Billing Day: ${billingDate.getDate()}`;
+
+                monthDiv.appendChild(monthName);
+                monthDiv.appendChild(billingDay);
+                calendarContainer.appendChild(monthDiv);
+            }
+        }
+    </script>
+</body>
+</html>

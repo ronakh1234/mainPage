@@ -1,0 +1,43 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF5E1; /* Solid cream background to match main.html */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    background-color: #8B7B52; /* Solid leafy color to match main.html */
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.graph-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.graph {
+    height: 20px;
+    background-color: #8B7B52; /* Graph color to match the button color in main.html */
+    margin: 10px 0;
+}
+
+.graph-label {
+    text-align: left;
+    font-weight: bold;
+}

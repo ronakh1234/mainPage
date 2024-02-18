@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Banking Analytics - SecureSteps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5E1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #8B7B52;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .graph-container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .graph-label {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .graph {
+            display: flex;
+            align-items: flex-end;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .bar {
+            flex-grow: 1;
+            margin: 0 5px;
+            background-color: #8B7B52;
+            text-align: center;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .bar-label {
+            font-size: 0.8rem;
+        }
+
+        .bar:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Business Banking Analytics</h1>
+        <h2>Detailed Financial Overview</h2>
+    </div>
+
+    <div class="content">
+        <div class="graph-container">
+            <div class="graph-label">Monthly Revenue</div>
+            <div class="graph" id="monthlyRevenue"></div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-label">Monthly Expenses</div>
+            <div class="graph" id="monthlyExpenses"></div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-label">Cash Flow</div>
+            <div class="graph" id="cashFlow"></div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-label">Investment Returns</div>
+            <div class="graph" id="investmentReturns"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SecureSteps. All rights reserved.</p>
+    </div>
+
+    <script>
+        function generateGraph(containerId, data) {
+            const container = document.getElementById(containerId);
+            data.forEach(item => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = `${item.value}%`;
+                bar.innerHTML = `<span class="bar-label">${item.month}<br>$${item.amount}</span>`;
+                container.appendChild(bar);
+            });
+        }
+
+
+        const monthlyRevenueData = [
+            { month: 'Jan', value: 70, amount: 7000 },
+            { month: 'Feb', value: 80, amount: 8000 },
+            { month: 'Mar', value: 75, amount: 7500 },
+            { month: 'Apr', value: 90, amount: 9000 },
+            { month: 'May', value: 100, amount: 10000 }
+        ];
+
+        const monthlyExpensesData = [
+            { month: 'Jan', value: 50, amount: 5000 },
+            { month: 'Feb', value: 60, amount: 6000 },
+            { month: 'Mar', value: 55, amount: 5500 },
+            { month: 'Apr', value: 70, amount: 7000 },
+            { month: 'May', value: 65, amount: 6500 }
+        ];
+
+        const cashFlowData = [
+            { month: 'Jan', value: 20, amount: 2000 },
+            { month: 'Feb', value: 20, amount: 2000 },
+            { month: 'Mar', value: 20, amount: 2000 },
+            { month: 'Apr', value: 20, amount: 2000 },
+            { month: 'May', value: 35, amount: 3500 }
+        ];
+
+        const investmentReturnsData = [
+            { month: 'Jan', value: 10, amount: 1000 },
+            { month: 'Feb', value: 15, amount: 1500 },
+            { month: 'Mar', value: 12, amount: 1200 },
+            { month: 'Apr', value: 18, amount: 1800 },
+            { month: 'May', value: 20, amount: 2000 }
+        ];
+
+
+        generateGraph('monthlyRevenue', monthlyRevenueData);
+        generateGraph('monthlyExpenses', monthlyExpensesData);
+        generateGraph('cashFlow', cashFlowData);
+        generateGraph('investmentReturns', investmentReturnsData);
+    </script>
+
+</body>
+</html>

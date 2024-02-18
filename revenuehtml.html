@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Analysis - SecureSteps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5E1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #8B7B52;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .data-table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            background-color: #f9f9f9;
+        }
+
+        .data-table th {
+            background-color: #8B7B52;
+            color: white;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #8B7B52;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Revenue Analysis</h1>
+        <h2>Detailed Insights and Financial Performance</h2>
+    </div>
+
+    <div class="content">
+        <div class="section" id="revenueTrends">
+            <div class="section-title">Revenue Trends</div>
+            <!-- Placeholder for Revenue Trends Graph -->
+            <p>Graphical representation of monthly revenue trends over the past year.</p>
+        </div>
+
+        <div class="section" id="profitMargins">
+            <div class="section-title">Profit Margins</div>
+            <!-- Placeholder for Profit Margins Graph -->
+            <p>Analysis of profit margins, highlighting efficiency and profitability.</p>
+        </div>
+
+        <div class="section" id="costAnalysis">
+            <div class="section-title">Cost Analysis</div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Cost</th>
+                        <th>Percentage of Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Materials</td>
+                        <td>$15,000</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>Labor</td>
+                        <td>$22,000</td>
+                        <td>37%</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>$8,000</td>
+                        <td>13%</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Total</td>
+                        <td>$45,000</td>
+                        <td>75%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" id="revenueStreams">
+            <div class="section-title">Revenue Streams</div>
+            <!-- Placeholder for Revenue Streams Graph -->
+            <p>Detailed breakdown of various revenue streams contributing to the overall income.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SecureSteps. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
